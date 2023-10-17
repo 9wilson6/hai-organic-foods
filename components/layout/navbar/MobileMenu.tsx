@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import React, { Fragment, useEffect, useState } from "react";
+import Search from "./Search";
 
 export default function MobileMenu() {
   const pathname = usePathname();
@@ -69,7 +70,7 @@ export default function MobileMenu() {
                   <XMarkIcon className="h-6" />
                 </button>
                 <div className="my-8 w-full border-t border-neutral-200 py-8">
-                  Search
+                  <Search />
                 </div>
                 {navbarContent.navbar.navLinks ? (
                   <ul className="flex w-full flex-col">
