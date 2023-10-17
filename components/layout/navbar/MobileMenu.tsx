@@ -20,21 +20,20 @@ export default function MobileMenu() {
         setIsOpen(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
     setIsOpen(false);
-  }, []);
+  }, [pathname, searchParams]);
 
   return (
     <>
       <button
         onClick={openMobileMenu}
-        aria-label="open mobile menu"
-        className="flex h-9 w-9 items-center justify-center rounded-md border border-[#01b48c]"
+        aria-label="Open Mobile Menu"
+        className="flex md:hidden h-8 w-8 items-center justify-center rounded-md border border-neutral-200 text-slate-800 transition-colors"
       >
         <Bars3Icon className="h-6" />
       </button>
@@ -49,7 +48,7 @@ export default function MobileMenu() {
             leaveFrom="opacity-100 backdrop-blur-[.5px]"
             leaveTo="opacity-0 backdrop-blur-none"
           >
-            <div className="fixed inset-0 bg-black/20" aria-hidden="true" />
+            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -60,26 +59,26 @@ export default function MobileMenu() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-[90%] flex-col bg-[#FDEFF3] pb-6">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-[90%] flex-col bg-white pb-6">
               <div className="p-4">
                 <button
+                  className="mb-4 flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 text-slate-800 transition-colors"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
-                  className="mb-4 flex h-9 w-9 items-center justify-center rounded-md border border-[#01b48c] text-slate-900 transition-colors"
                 >
                   <XMarkIcon className="h-6" />
                 </button>
-                <div className="my-8 w-full border-t border-neutral-200 py-8">
+                <div className="my-9 w-full">
                   <Search />
                 </div>
-                {navbarContent.navbar.navLinks ? (
+                {navbarContent.navbar.navLinks.length ? (
                   <ul className="flex w-full flex-col">
                     {navbarContent.navbar.navLinks.map((link) => {
                       const { id, href, title } = link;
                       return (
                         <li
                           key={id}
-                          className="py-2 text-base text-slate-900 transition-colors hover:text-neutral-900"
+                          className="py-2 text-lg text-black transition-colors hover:text-neutral-500 "
                         >
                           <Link href={href} onClick={closeMobileMenu}>
                             {title}

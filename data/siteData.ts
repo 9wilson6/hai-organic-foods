@@ -6,7 +6,7 @@ export const navbarContent = {
 
     navLinks: [
       // { id: uuidv4(), title: "Home", href: "/" },
-      { id: uuidv4(), title: "Meal Kits", href: "/meal-kits" },
+      { id: uuidv4(), title: "Shop", href: "/shop" },
       { id: uuidv4(), title: "FAQ", href: "/faq" },
       { id: uuidv4(), title: "Contact", href: "/contact" },
     ],
@@ -15,4 +15,11 @@ export const navbarContent = {
       href: "/deliver",
     },
   },
+};
+
+export const heroContent = {
+  ingredients:
+    "Dive into delicious meals crafted from local, organic ingredients. Every bite supports the planet",
+  delivery:
+    "Delivery of fresh produce with a traceability from the organic farm to your plate with confidence",
 };

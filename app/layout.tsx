@@ -1,8 +1,8 @@
+import Navbar from "@/components/layout/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import Header from "@/components/ui/Header";
+
 import { Inter } from "next/font/google";
-import Navbar from "@/components/layout/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#FDEFF3]`}>
+      <body className={`${inter.className}`}>
         <Navbar />
-        {/* <div className="relative">
-          <Header />
-        </div> */}
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
