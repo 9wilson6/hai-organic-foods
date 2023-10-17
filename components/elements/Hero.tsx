@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "../layouts/Container";
 import heroImage from "../../public/images/hero-img.jpg";
 import Image from "next/image";
 export default function Hero() {
@@ -17,14 +16,11 @@ export default function Hero() {
             alt="Hero Image"
             className="mb-5 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <Container>
-            <div className="mx-auto max-w-[800px] text-center">
-              <h1 className="text-3xl font-bold leading-tight text-black sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                Hai Organic Foods
-              </h1>
-            </div>
-          </Container>
+          <div className="absolute inset-0 bg-black opacity-70 flex justify-center items-center">
+            <h1 className="text-white text-3xl font-bold leading-tight text-center sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+              Hai Organic Foods
+            </h1>
+          </div>
         </div>
       </div>
     </section>
