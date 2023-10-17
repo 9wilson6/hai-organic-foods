@@ -34,7 +34,7 @@ export default function MobileMenu() {
       <button
         onClick={openMobileMenu}
         aria-label="open mobile menu"
-        className="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-200"
+        className="flex h-9 w-9 items-center justify-center rounded-md border border-[#01b48c]"
       >
         <Bars3Icon className="h-6" />
       </button>
@@ -65,7 +65,7 @@ export default function MobileMenu() {
                 <button
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
-                  className="mb-4 flex h-9 w-9 items-center justify-center rounded-md border border-neutral-200 text-slate-900 transition-colors"
+                  className="mb-4 flex h-9 w-9 items-center justify-center rounded-md border border-[#01b48c] text-slate-900 transition-colors"
                 >
                   <XMarkIcon className="h-6" />
                 </button>

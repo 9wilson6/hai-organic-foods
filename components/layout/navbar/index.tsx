@@ -46,7 +46,7 @@ export default function Navbar() {
             {navbarContent.navbar.cta.label ? (
               <Link
                 href={navbarContent.navbar.cta.href}
-                className="bg-slate-800 flex items-center gap-1 hover:bg-slate-900 text-white px-2 py-1.5 rounded-sm text-sm font-medium"
+                className="bg-slate-800 flex items-center border border-[#01b48c] gap-1 hover:bg-slate-900 text-white px-2 py-1.5 rounded-sm text-sm font-medium"
               >
                 {navbarContent.navbar.cta.label}
                 <span className="hidden md:block">my food</span>
