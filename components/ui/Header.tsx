@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Container from "../layouts/Container";
+import Container from "../Container";
 import Link from "next/link";
 import { headerContent } from "@/data/siteData";
 

@@ -1,13 +1,18 @@
 import { v4 as uuidv4 } from "uuid";
 
-export const headerContent = {
-  header: {
+export const navbarContent = {
+  navbar: {
     logo: "Hai",
 
     navLinks: [
-      { id: uuidv4(), title: "Products", href: "/products" },
+      // { id: uuidv4(), title: "Home", href: "/" },
+      { id: uuidv4(), title: "Meal Kits", href: "/meal-kits" },
       { id: uuidv4(), title: "FAQ", href: "/faq" },
-      { id: uuidv4(), title: "About", href: "/about" },
+      { id: uuidv4(), title: "Contact", href: "/contact" },
     ],
+    cta: {
+      label: "Deliver my food",
+      href: "/deliver",
+    },
   },
 };
