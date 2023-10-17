@@ -2,13 +2,16 @@ import Container from "@/components/Container";
 import { navbarContent } from "@/data/siteData";
 import Link from "next/link";
 import React from "react";
+import MobileMenu from "./MobileMenu";
 const { SITE_NAME } = process.env;
 
 export default function Navbar() {
   return (
     <Container>
       <nav className="relative flex items-center justify-between p-6 lg:px-6">
-        <div className="block flex-none md:hidden">Mobile Menu</div>
+        <div className="block flex-none md:hidden">
+          <MobileMenu />
+        </div>
         <div className="flex w-full items-center">
           <div className="flex w-full md:w-1/4">
             <Link
@@ -39,13 +42,14 @@ export default function Navbar() {
               </ul>
             ) : null}
           </div>
-          <div className="hidden justify-center md:flex md:w-1/4">
+          <div className="flex justify-end md:w-1/4">
             {navbarContent.navbar.cta.label ? (
               <Link
                 href={navbarContent.navbar.cta.href}
-                className="bg-slate-800 hover:bg-slate-900 text-white px-2 py-1.5 rounded-sm text-sm font-medium"
+                className="bg-slate-800 flex items-center gap-1 hover:bg-slate-900 text-white px-2 py-1.5 rounded-sm text-sm font-medium"
               >
                 {navbarContent.navbar.cta.label}
+                <span className="hidden md:block">my food</span>
               </Link>
             ) : null}
           </div>

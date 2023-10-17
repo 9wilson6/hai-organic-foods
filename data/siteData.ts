@@ -11,7 +11,7 @@ export const navbarContent = {
       { id: uuidv4(), title: "Contact", href: "/contact" },
     ],
     cta: {
-      label: "Deliver my food",
+      label: "Deliver",
       href: "/deliver",
     },
   },
