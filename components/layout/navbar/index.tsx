@@ -5,9 +5,11 @@ import React, { Suspense } from "react";
 import MobileMenu from "./MobileMenu";
 import Search from "./Search";
 import Image from "next/image";
+import { getCurrentUser } from "@/lib/session";
 import Avatar from "./Avatar";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const user = await getCurrentUser();
   return (
     <>
       <nav className="relative flex items-center justify-between p-6 lg:px-9">
@@ -15,7 +17,7 @@ export default function Navbar() {
           <MobileMenu />
         </div>
         <div className="flex w-full items-center">
-          <div className="flex w-full md:w-1/3">
+          <div className="flex w-full flex-1 md:w-1/3">
             <Link
               href="/"
               className="flex w-full items-center justify-center md:w-auto lg:mr-6"
@@ -47,6 +49,16 @@ export default function Navbar() {
                     </li>
                   );
                 })}
+                {user && (
+                  <li>
+                    <Link
+                      href="/myproducts"
+                      className="whitespace-nowrap text-neutral-500 underline-offset-4 hover:text-green-500 hover:underline"
+                    >
+                      My Products
+                    </Link>
+                  </li>
+                )}
               </ul>
             ) : null}
           </div>

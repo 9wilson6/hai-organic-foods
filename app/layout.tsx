@@ -1,8 +1,10 @@
 import Navbar from "@/components/layout/navbar";
+import Provider from "@/providers/sessionProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
+import Container from "@/components/Container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <Navbar />
-        <main>{children}</main>
+      <body className={`${inter.className} overflow-hidden`}>
+        <Provider>
+          <Container>
+            <Navbar />
+          </Container>
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );
