@@ -4,6 +4,8 @@ import Link from "next/link";
 import React, { Suspense } from "react";
 import MobileMenu from "./MobileMenu";
 import Search from "./Search";
+import Image from "next/image";
+import Avatar from "./Avatar";
 
 export default function Navbar() {
   return (
@@ -51,8 +53,10 @@ export default function Navbar() {
           <div className="hidden justify-center md:flex md:w-1/3">
             <Search />
           </div>
-          <div className="flex justify-end md:w-1/3">
-            <Suspense>Cart</Suspense>
+          <div className="flex items-center gap-3 justify-end md:w-1/3">
+            <Suspense>
+              <Avatar />
+            </Suspense>
           </div>
         </div>
       </nav>
