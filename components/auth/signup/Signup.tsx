@@ -66,7 +66,7 @@ export default function SignUpForm() {
           type="password"
           id="password"
           value={user.password}
-          placeholder="Name"
+          placeholder="Password"
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           className="p-2 border-gray-300 border-[1px] rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
         />

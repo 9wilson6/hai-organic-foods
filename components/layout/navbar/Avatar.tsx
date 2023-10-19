@@ -57,7 +57,7 @@ export default function Avatar() {
           alt="Avatar"
         />
         <div
-          className={`absolute bg-white rounded-lg p-2 shadow-lg z-[2] ${
+          className={`absolute right-0 bg-white rounded-lg p-2 shadow-xl z-[2] ${
             showProfile ? "" : "hidden"
           }`}
         >
