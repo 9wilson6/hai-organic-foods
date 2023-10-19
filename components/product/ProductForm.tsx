@@ -6,6 +6,7 @@ import Size from "./Size";
 import Color from "./Color";
 import TextArea from "./TextArea";
 import ImageUpload from "./ImageUpload";
+import axios from "axios";
 export default function ProductForm() {
   const { data: session } = useSession();
   const id = session?.user.id;
@@ -83,6 +84,16 @@ export default function ProductForm() {
       userId: id,
     }));
   }, [imageUrls, id, Description]);
+
+  const postData = async () => {
+    handleImageChange();
+    try {
+      const res = await axios.post("/api/addproduct", formData);
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <section className="px-5 max-w-[1200px] mx-auto mt-16 mb-24">
@@ -219,6 +230,12 @@ export default function ProductForm() {
           setImageUrls={setImageUrls}
           handleImageChange={handleImageChange}
         />
+        <button
+          onClick={postData}
+          className="text-white rounded-lg px-5 py-2 mt-10 border-[1px] bg-green-500"
+        >
+          Submit
+        </button>
       </div>
     </section>
   );

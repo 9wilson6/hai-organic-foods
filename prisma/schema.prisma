@@ -27,10 +27,10 @@ model Product {
   style       String
   store       String
   size        String
-  inventory   String
+  inventory   Int
   color       String
   price       Int
-  Images      String @db.Text
+  images      String @db.Text
   userId      Int
   User        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
