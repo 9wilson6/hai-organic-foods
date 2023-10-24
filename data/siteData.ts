@@ -6,7 +6,7 @@ export const navbarContent = {
 
     navLinks: [
       // { id: uuidv4(), title: "Home", href: "/" },
-      { id: uuidv4(), title: "Shop", href: "/shop" },
+      { id: uuidv4(), title: "Shop", href: "/" },
       // { id: uuidv4(), title: "FAQ", href: "/faq" },
       // { id: uuidv4(), title: "Contact", href: "/contact" },
     ],

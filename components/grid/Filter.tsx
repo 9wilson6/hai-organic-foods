@@ -3,18 +3,40 @@ import React, { useState, useEffect } from "react";
 import { BsSliders2Vertical, BsChevronUp } from "react-icons/bs";
 import axios from "axios";
 
-type Props = {};
+type FilterProps = {
+  selectedCategories: string[];
+  setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>;
+  // selectedSize: string[];
+  // setSelectedSize: React.Dispatch<React.SetStateAction<string[]>>;
+  // selectedHexValues: string[];
+  // setSelectedHexValues: React.Dispatch<React.SetStateAction<string[]>>;
+  // allHexValues: string[];
+  // setAllHexValues: React.Dispatch<React.SetStateAction<string[]>>;
+  price: { min: number; max: number };
+  setPrice: React.Dispatch<React.SetStateAction<{ min: number; max: number }>>;
+};
 
-const Filter = (props: Props) => {
+const Filter = ({
+  selectedCategories,
+  setSelectedCategories,
+  // selectedSize,
+  // setSelectedSize,
+  // selectedHexValues,
+  // setSelectedHexValues,
+  // allHexValues,
+  // setAllHexValues,
+  price,
+  setPrice,
+}: FilterProps) => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedSize, setSelectedSize] = useState<string[]>([]);
-  const [allHexValues, setHexValues] = useState<string[]>([]);
-  const [selectedHexValues, setSelectedHexValues] = useState<string[]>([]);
-  const [price, setPrice] = useState({
-    min: 0,
-    max: 10,
-  });
+  // const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  // const [selectedSize, setSelectedSize] = useState<string[]>([]);
+  // const [allHexValues, setHexValues] = useState<string[]>([]);
+  // const [selectedHexValues, setSelectedHexValues] = useState<string[]>([]);
+  // const [price, setPrice] = useState({
+  //   min: 0,
+  //   max: 10,
+  // });
 
   const handelMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value =
@@ -42,21 +64,21 @@ const Filter = (props: Props) => {
     );
   };
 
-  const togglesize = (size: string) => {
-    setSelectedSize((prevSize) =>
-      prevSize.includes(size)
-        ? prevSize.filter((c) => c !== size)
-        : [...prevSize, size]
-    );
-  };
+  // const togglesize = (size: string) => {
+  //   setSelectedSize((prevSize) =>
+  //     prevSize.includes(size)
+  //       ? prevSize.filter((c) => c !== size)
+  //       : [...prevSize, size]
+  //   );
+  // };
 
-  const toggleColor = (color: string) => {
-    setSelectedHexValues((prevColor) =>
-      prevColor.includes(color)
-        ? prevColor.filter((c) => c !== color)
-        : [...prevColor, color]
-    );
-  };
+  // const toggleColor = (color: string) => {
+  //   setSelectedHexValues((prevColor) =>
+  //     prevColor.includes(color)
+  //       ? prevColor.filter((c) => c !== color)
+  //       : [...prevColor, color]
+  //   );
+  // };
 
   const getAllColors = async () => {
     try {
@@ -69,24 +91,24 @@ const Filter = (props: Props) => {
     }
   };
 
-  useEffect(() => {
-    getAllColors().then((allColors) => {
-      if (allColors) {
-        const hextSet = new Set<string>();
-        allColors.forEach((element: any) => {
-          const colors = element.color.split(",");
-          colors.forEach((color: string) => {
-            const hextValue = color.replace("#", "");
-            hextSet.add(hextValue);
-          });
-        });
-        const uniqueHexValues: string[] = Array.from(hextSet);
-        setHexValues(uniqueHexValues);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   getAllColors().then((allColors) => {
+  //     if (allColors) {
+  //       const hextSet = new Set<string>();
+  //       allColors.forEach((element: any) => {
+  //         const colors = element.color.split(",");
+  //         colors.forEach((color: string) => {
+  //           const hextValue = color.replace("#", "");
+  //           hextSet.add(hextValue);
+  //         });
+  //       });
+  //       const uniqueHexValues: string[] = Array.from(hextSet);
+  //       setHexValues(uniqueHexValues);
+  //     }
+  //   });
+  // }, []);
 
-  const allHexValue = allHexValues;
+  // const allHexValue = allHexValues;
 
   useEffect(() => {
     axios

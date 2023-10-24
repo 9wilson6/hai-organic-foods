@@ -25,6 +25,7 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-pick-color": "^2.0.0",
+    "react-rating-star-with-type": "^1.2.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
