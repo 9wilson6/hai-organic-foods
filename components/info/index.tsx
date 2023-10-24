@@ -57,6 +57,41 @@ export default function Info({
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
       </div>
+      <hr className="w-9/12 mt-10" />
+
+      <div className="grid grid-cols-2 gap-10 opacity-70 mt-5">
+        <span className="text-sm fles items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <CiCreditCard1 size={24} />
+          </span>
+          <p>Secure Payment</p>
+        </span>
+        {/* <span className="text-sm fles items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <SlTag size={24} />
+          </span>
+          <p>Size & Fit</p>
+        </span> */}
+        <span className="text-sm fles items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <LiaShippingFastSolid size={24} />
+          </span>
+          <p>Free Shipping</p>
+        </span>
+        <span className="text-sm fles items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <PiCubeFocusThin size={24} />
+          </span>
+          <p>Free Shipping & Return</p>
+        </span>
+      </div>
+      {currentUserId === userId && (
+        <Link href={`/edit/${id}`}>
+          <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer">
+            <AiTwotoneEdit size={24} />
+          </span>
+        </Link>
+      )}
     </div>
   );
 }
