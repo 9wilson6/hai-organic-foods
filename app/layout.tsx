@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
 import Container from "@/components/Container";
+import Footer from "@/components/layout/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,10 +27,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden`}>
         <Provider>
-          <Container>
-            <Navbar />
-          </Container>
-          <main>{children}</main>
+          <div className="flex flex-col h-screen">
+            <Container>
+              <Navbar />
+            </Container>
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </Provider>
       </body>
     </html>

@@ -12,7 +12,7 @@ export default async function Navbar() {
   const user = await getCurrentUser();
   return (
     <>
-      <nav className="relative flex items-center justify-between p-6 lg:px-9">
+      <nav className="relative flex items-center justify-between py-6 lg:py-9">
         <div className="block flex-none md:hidden">
           <MobileMenu />
         </div>
